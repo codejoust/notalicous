@@ -1,0 +1,16 @@
+{% extends 'base_page.html' %}
+{% block content %}
+<div class="notes-list-large">
+<h3>New Notes!</h3>
+<ul class='notes-list large'>
+  {% for note in notes %}
+  <li>
+  <a href="view/{{ note.permalink }}">
+	  <span class="name">{{ note.name }}</span>
+	  <span class="taken">{{note.taken}}</span>
+  </a>
+  </li>
+  {% endfor %}
+</ul>
+</div>
+{% endblock %}

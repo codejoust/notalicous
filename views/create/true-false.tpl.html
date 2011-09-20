@@ -1,0 +1,24 @@
+{% extends '../base_page.html' %}
+
+{% block content %}
+<form class="create-form" id="create-yes-no" action="">
+	<h2>Make your yes-no quiz!</h2>
+
+	<h3>Questions:</h3>
+
+	<ul class="questions-wrap">
+		<li id="quest-#"><!--<label class="section-title" for="section#">Section:</label>-->
+		<input type="text" class="section-name" id="section#" name="section#" />
+		<ul class="questions">
+			<li><input type="text" class="question" name="question#[]" /></li>
+		</ul></li>
+	</ul>
+
+    <div id="gobar" class="bar container">
+		<div class="gobar-content ">
+			<input type="submit" value="I'm Done!" class="go-sub" />
+		</div>
+	</div>
+
+</form>
+{% endblock %}

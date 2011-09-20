@@ -1,0 +1,63 @@
+
+<form class="create-form" id="create-note" action="">
+	<div class="name-creator">
+		<h3><label for="note-name">Note Name:</label></h3>
+		<input type="text" id="note-name" name="note-name" />
+	</div>
+
+	<h3>Questions:</h3>
+
+	<ul class="questions-wrap" id='questions-wrap'>
+	</ul>
+	<div id="footer-padding">&nbsp;</div>
+
+	<script type="x-cj-tpl" id="fill-in-tpl">
+		<li class='fill-in section' type="fill-in">
+		<div class="type">Fill-In Section</div>
+		<input type="text" class="section-name" />
+		<ul class="questions">
+			<li><input type="text" class="question rpt" /></li>
+			<li class="ghost"><input type="text" class="question rpt ghost" /><span class="icon add"> + </span></li>
+		</ul></li>
+	</script>
+
+	<script type="x-cj-tpl" id="yes-no-tpl">
+		<li class="yes-no section" type="yes-no">
+		<div class="type">Yes/No Section</div>
+		<input type="text" class="section-name" />
+		<ul class="questions">
+			<li><input type="text" class="question rpt" /></li>
+			<li class="ghost"><input type="text" class="question rpt ghost" /><span class="icon add"> + </span></li>
+		</ul></li>
+	</script>
+
+	<script type="x-cj-tpl" id="musik-tpl">
+		<li class="musik section" type="musik">
+		<div class="type">Musik Picks Section!</div>
+		<input type="text" class="section-name" />
+		<ul class="questions">
+			<li><input type="text" class="question rpt" /></li>
+			<li class="ghost"><input type="text" class="question rpt ghost" /><span class="icon add"> + </span></li>
+		</ul></li>
+	</script>
+
+	<script type="x-cj-tpl" id="tools-tpl">
+		<div class="tools">
+			<a class="del icon" title="delete">x</a>
+			<a class="up icon" title="up">^</a>
+			<a class="down icon" title="down">\/</a>
+		</div>
+	</script>
+
+	<script type="x-cj-tpl" id="question-tpl">
+		<li><input type="text" class="question rpt" /><span class="icon delete"> -- </span></li>
+	</script>
+
+
+    <div id="gobar" class="bar container">
+		<div class="gobar-content ">
+			<input type="submit" value="I'm Done!" class="go-sub" />
+		</div>
+	</div>
+
+</form>

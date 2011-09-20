@@ -1,0 +1,15 @@
+{% extends "base_page.html" %}
+
+{% block title %}Quizalicous{% endblock %}
+
+{% block content %}
+<h3 class="choice-header">What's cool to add to your note?</h3>
+<ul class="choices">
+	<li><a id="c-musik" href="#create/musik">A music section!</a></li>
+	<li><a id="c-yes-no" href="#create/yes-no">
+		<span class="chg-txt"><span id="chg1">True / False</span><span class="hide" id="chg2">Yes / No</span></span>
+		section</a></li>
+	<li><a id="c-fill-in" href="#create/fill-in">A fill in the blanks section</a></li>
+</ul>
+{% include '_form.tpl.html' %}
+{% endblock %}

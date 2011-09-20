@@ -1,0 +1,20 @@
+{% extends 'base_page.html' %}
+{% block content %}
+	<div class="choices frontpage">
+		<div class="links">
+			<div class="create"><a href="/new">Create a Note</a></div>
+			<div class="views"><a href="/notes">See More Notes</a></div>
+		</div>
+		{% if top_notes %}
+		<div class="top-notes">
+			<h4>Top Notes:</h4>
+			<ul class="notes-list">
+				{% for note in top_notes %}
+				<li><a href="/note/{{note.permalink}}">{{note.name}}</a> 
+					<abbr name="Times Taken">({{note.taken}})</abbr></li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+	</div>
+{% endblock %}

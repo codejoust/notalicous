@@ -1,0 +1,30 @@
+{% extends 'base_page.html' %}
+{% block content %}
+<form action="/submit_note" method="post" id="take-note" class="take-note">
+<input type='hidden' name='note_id' value='{{note.id}}' />
+<h1>{{note.name }}</h1>
+{% for group in note.question_groups %}
+<div class="section {{group.qtype.key}}">
+  <h3><span>{{group.header|e}}</span> <em class="type">{{group.qtype.name}}</em></h3>
+  <ul class="questions">
+   {% set groupid = loop.index %}
+   <input type="hidden" name="pn-{{groupid}}" value="{{group.qtype.key}}" />
+   {% for question in group.questions %}
+   {% set qid = 'pn-%iq%i' % (groupid, loop.index) %}
+   <li class="g-{{group.qtype.key}}">
+	 {% if group.qtype.key == 'yes-no' %}
+		<input type="checkbox" class="checkbox" id="{{qid}}" name="{{qid}}" value="yes" />
+		<label for="{{qid}}">{{question}}</label>
+	 {% else %}
+		 <label for="{{qid}}">{{question}}</label>
+    	 <input id="{{qid}}" name="{{qid}}" class="text text-input" />
+	 {% endif %}
+   </li>
+   {% endfor %}
+  </ul>
+</div>
+{% endfor %}
+<input type="submit" value="Share/Publish with your friends!" class="submit" />
+<!--{# include '_fb_api.tpl.html' #}-->
+</form>
+{% endblock %}

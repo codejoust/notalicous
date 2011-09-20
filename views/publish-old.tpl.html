@@ -1,0 +1,23 @@
+<p><small>by <a href="http://notalicous.rotfl.tk/">notalicous</a>. | <a href="http://notalicous.rotfl.tk/{{note.permalink}}">Take this quiz &raquo;</a></small></p>
+{% for group in answers %}
+	<b>{{group.name}}</b>
+	<ol>
+	{% for answer in group.answers %}
+			<li>
+				{% if group.type == 'yes-no' %}
+					{#{% if answer[1] %}&#10004;{% else %}&#10008;{% endif %} #}
+                {% if answer[1] %}[x] {% else %}[ ] {%endif %}
+			 : {{answer[0]}} 
+				{% else %}
+			{{answer[0]}}: 
+					<blockquote>{{answer[1]}}</blockquote>
+				{% endif %}
+			</li>
+	{% endfor %}
+	</ol>
+{% endfor %}
+<br />
+<p>----</p>
+<p>
+<a href="http://apps.facebook.com/notalicous/take/{{note.permalink}}">Take this quiz &raquo;</a> | <a href="http://notalicous.rotfl.tk">See more Quizzes &raquo;</a>
+</p>

@@ -1,0 +1,40 @@
+{% extends "base_page.html" %}
+
+{% block title %}Create!{% endblock %}
+
+{% block content %}
+<h2>Ok, so let's hear your awesome note idea:</h2>
+<form action="/new">
+	<section class="span-10">
+		<label for="name">Title</label>
+		<input id="name" name="title" />
+	</section>
+	<section class="span-15">
+ 		<h5>Do you want to score it?</h5>
+		<p>
+		<span>	
+			<input type="radio" name="scoring" id="score-sub" value="sub" />
+			<label for="score-sub">by subtracting points...</label>
+		</span><span>
+			<input type="radio" name="scoring" value="add" id="score-add" />
+			<label for="score-add">by adding points...</label>
+		</span><span>
+			<input type="radio" name="scoring" value="precent" id="score-precent" />
+			<label for="score-precent">by percent answered</label>
+		</span><span>
+			<input type="radio" name="scoring" value="none" id="scoring-none" />
+			<label for="scoring-none">Nah, I'll keep it simple and not worry about scoring.</label>
+		</span>
+		</p>
+	</section>
+
+
+
+
+	<button id="add">Add</button>
+
+
+
+
+</form>
+{% endblock %}

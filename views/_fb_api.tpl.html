@@ -1,0 +1,24 @@
+<!--
+<div id="fb-root"></div>
+<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+	FB.init({
+		appId: ,
+		status: true,
+		cookie: true,
+		xfbml: false
+		});
+-->
+<script type="text/javascript">
+	var runlogin = function(){
+		if (document.cookie.match('session_key')){
+			return true;
+		} else {
+			var popwin = window.open('/fb/connect');
+			return false;
+		}
+	}
+    function login_evt(){
+		document.getElementById('take-note').submit();
+	}
+    document.getElementById('take-note').onsubmit = runlogin;
+</script>
